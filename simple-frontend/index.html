@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plus Ultra fitness tracker generates a simple personalized workout plan."
+    />
+    <title>Plus Ultra | Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar">
+        <div class="brand">
+          <img src="logo.svg" alt="Plus Ultra logo" />
+          <span>Plus Ultra</span>
+        </div>
+        <a href="#planner">Generate Plan</a>
+      </nav>
+
+      <section class="hero-content">
+        <div>
+          <p class="tagline">AI-style fitness tracker</p>
+          <h1>Plus Ultra</h1>
+          <p class="hero-text">
+            Create a simple workout plan using your age, body weight, height,
+            workout intensity, and fitness goal.
+          </p>
+        </div>
+
+        <div class="feature-list" aria-label="App highlights">
+          <div>
+            <strong>Body Aware</strong>
+            <span>Uses age, height, and weight</span>
+          </div>
+          <div>
+            <strong>Goal Based</strong>
+            <span>Weight loss or muscle building</span>
+          </div>
+          <div>
+            <strong>Mobile Ready</strong>
+            <span>Works neatly on small screens</span>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="layout" id="planner">
+      <section class="card">
+        <h2>Enter Your Details</h2>
+        <p class="muted">Fill the form to generate your plan.</p>
+
+        <form id="fitnessForm">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Alex" />
+
+          <div class="form-grid">
+            <div>
+              <label for="age">Age</label>
+              <input id="age" type="number" min="12" max="90" placeholder="21" required />
+            </div>
+            <div>
+              <label for="weight">Weight (kg)</label>
+              <input id="weight" type="number" min="25" max="250" placeholder="70" required />
+            </div>
+            <div>
+              <label for="height">Height (cm)</label>
+              <input id="height" type="number" min="100" max="240" placeholder="175" required />
+            </div>
+          </div>
+
+          <label for="intensity">Workout Intensity</label>
+          <select id="intensity">
+            <option value="low">Low</option>
+            <option value="moderate" selected>Moderate</option>
+            <option value="high">High</option>
+          </select>
+
+          <fieldset>
+            <legend>Goal</legend>
+            <div class="goal-row">
+              <label class="choice">
+                <input type="radio" name="goal" value="weight-loss" checked />
+                Weight Loss
+              </label>
+              <label class="choice">
+                <input type="radio" name="goal" value="muscle" />
+                Muscle Building
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="button-row">
+            <button type="submit">Generate Plan</button>
+            <button type="button" class="secondary" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card result-card" aria-live="polite">
+        <h2 id="resultTitle">Your Plan Appears Here</h2>
+        <p class="muted" id="resultSubtitle">
+          Complete the form and click Generate Plan.
+        </p>
+
+        <div id="resultContent" class="empty-box">
+          <img src="logo.svg" alt="" />
+          <p>No plan generated yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
